@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script>
+    window.onload = function () {
+      document
+        .querySelector(".say-hi-button")
+        .addEventListener("click", function () {
+          // here you can change also a-scene or a-entity properties, like
+          // changing your 3D model source, size, position and so on
+          // or you can just open links, trigger actions...
+          // alert("Hi there!");
+        });
+    };
+  </script>
+  <style>
+  
+.btn-group button {
+    margin: 0 auto;
+    display: block;
+    background-color: #000000; /* Green background */
+    border: 1px solid #808080; /* Green border */
+    color: white; /* White text */
+    padding: 40px 10px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 20%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+    button-align: center;
+}
+
+.btn-group button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #696969;
+}
+</style>
+
+<body>
+<h1></h1>
+
+<div class="btn-group">
+  <form action="https://faerlou.github.io/VR5Corners/" target="_blank"><button>Закладка храма 1916</button> </form>
+  <form action="" target="_blank"><button>Метеоритное озеро</button> </form>
+  <form action="" target="_blank"><button>Железная дорога</button> </form>
+  <form action="" target="_blank"><button>Остановка4</button> </form>
+  <form action="" target="_blank"><button>Остановка5</button> </form>
+  <form action="" target="_blank"><button>Остановка6</button> </form>
+  <form action="" target="_blank"><button>Остановка7</button> </form>
+  <form action="" target="_blank"><button>Остановка8</button> </form>
+  <form action="" target="_blank"><button>Остановка9</button> </form>
+    </div>
+    <a-scene embedded arjs>
+     
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
