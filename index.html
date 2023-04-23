@@ -1,65 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  <!-- we import arjs version without NFT but with marker + location based support -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <script>
-    window.onload = function () {
-      document
-        .querySelector(".say-hi-button")
-        .addEventListener("click", function () {
-          // here you can change also a-scene or a-entity properties, like
-          // changing your 3D model source, size, position and so on
-          // or you can just open links, trigger actions...
-          // alert("Hi there!");
-        });
-    };
-  </script>
-  <style>
-  
-    .btn-group button {
-    margin: 0 auto;
-    display: block;
-
-    // background-color: #000000; /* Green background */
-    background: rgba(147, 151, 194, 0.5);
-    border: 1px solid #808080; /* border */
-    border-radius: 2px;
-    color: white; /* White text */
-    padding: 16px 32px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    width: 30%; /* Set a width if needed */
-// margin: 4px 100px;
-    display: block; /* Make the buttons appear below each other */
-    button-align: center;
-}
-
-.btn-group button:not(:last-child) {
-    border-bottom: none; /* Prevent double borders */
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-    background-color: #696969;
-}
-</style>
-
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>	
 <body>
-<h1></h1>
 
-<div class="btn-group">
-  <form action="https://faerlou.github.io/VR1/"><button>Романов-на-Мурмане. НАДЕЖДА</button> </form>
-  <form action="https://faerlou.github.io/Coin/"><button>Северный рубль</button> </form>
-  <form action="https://faerlou.github.io/VR2/" target="_blank"><button>Дома-чемоданы / Декавилька</button> </form>
-  <form action="https://faerlou.github.io/AR5Corners/" target="_blank"><button>Пять углов (25 октября 1938)</button> </form>
-  <form action="" target="_blank"><button> Фидель Кастро / Вокзал (27 апреля 1963г.)</button> </form>
-  <form action="" target="_blank"><button>ТПО-небоскрёб</button> </form>
-  <form action="" target="_blank"><button>Арктика / ул.Ленинградская</button> </form>
-  <form action="" target="_blank"><button>Кафе «Юность»</button> </form>
-    </div>
-    <a-scene embedded arjs>
-     
-      <a-entity camera></a-entity>
+	<a-scene>
+	<a-sky color="#090C50" rotation="0 0 0" scale="10 10 10"></a-sky>
+	<a-entity gltf-model="url(interface.gltf)" position="0 0.5 0" rotation="0 0 0" scale="2 2 2"></a-entity>
+	
+	<a-entity class="link" link="href:https://faerlou.github.io/VR1/"  gltf-model="url(batton.gltf)" position="0 -0.05 -4" rotation="0 0 0" scale="1.1 1.1 1.1"></a-entity> <!-- 1 -->
+	<a-entity class="link" link="href:https://faerlou.github.io/VR2/"  gltf-model="url(batton.gltf)" position="3 -0.15 -3" rotation="0 135 0" scale="1.1 1.1 1.1"></a-entity> <!-- 2 -->
+	<a-entity class="link" link="href:https://faerlou.github.io/AR5Corners/"  gltf-model="url(batton.gltf)" position="4 -0.05 0" rotation="0 90 0" scale="1.1 1.1 1.1"></a-entity> <!-- 3 -->
+	<a-entity class="link" link="href:"  gltf-model="url(batton.gltf)" position="3 -0.15 3" rotation="0 45 0" scale="1.1 1.1 1.1"></a-entity> <!-- 4 -->
+	<a-entity class="link" link="href:"  gltf-model="url(batton.gltf)" position="0 -0.05 4" rotation="0 0 0" scale="1.1 1.1 1.1"></a-entity> <!-- 5 -->
+	<a-entity class="link" link="href:"  gltf-model="url(batton.gltf)" position="-3 -0.15 3" rotation="0 -45 0" scale="1.1 1.1 1.1"></a-entity> <!-- 6 -->
+	<a-entity class="link" link="href:"  gltf-model="url(batton.gltf)" position="-4 -0.05 0" rotation="0 90 0" scale="1.1 1.1 1.1"></a-entity> <!-- 7 -->
+		
+     <a-camera>
+      <a-cursor
+        id="cursor"
+        animation__click="property: scale; from: 0.5 0.5 0.5; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+        animation__clickreset="property: scale; to: 0.5 0.5 0.5; dur: 1; startEvents: animationcomplete__click"
+        animation__fusing="property: scale; from: 1 1 1; to: 0.5 0.5 0.5; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+     </a-camera>
     </a-scene>
   </body>
 </html>
